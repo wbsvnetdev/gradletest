@@ -1,0 +1,20 @@
+.footer {
+  background-color: black;
+  padding: 41px;
+  margin-top: 37px;
+}
+
+.footer p {
+  color: white;
+}
+
+.footer-link {
+  color: #66DE89;
+text-align: center;
+
+}
+
+.footer-link li {
+  display: inline ;
+  padding: 7px;
+}
