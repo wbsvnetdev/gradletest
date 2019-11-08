@@ -30,7 +30,7 @@ pipeline {
                                         sourceFiles: 'dist/gradletest.zip',
                                         removePrefix: 'dist/',
                                         remoteDirectory: '/tmp',
-                                        execCommand: 'sudo /usr/bin/systemctl stop httpd && rm -rf /var/www/html/* && unzip /tmp/gradletest.zip -d /var/www/html && sudo /usr/bin/systemctl start httpd'
+                                        execCommand: 'sudo -S /usr/bin/systemctl stop httpd && rm -rf /var/www/html/* && unzip /tmp/gradletest.zip -d /var/www/html && sudo /usr/bin/systemctl start httpd'
                                         
                                     )
                                 ]
