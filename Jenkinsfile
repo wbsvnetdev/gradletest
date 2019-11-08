@@ -9,7 +9,7 @@ pipeline {
             }
         }
 
-          stage('DeployToStaging') {
+              stage('DeployToStaging') {
             when {
                 branch 'master'
             }
@@ -27,10 +27,10 @@ pipeline {
                                 ],
                                 transfers: [
                                     sshTransfer(
-                                        sourceFiles: 'dist/trainSchedule.zip',
+                                        sourceFiles: 'dist/gradletest.zip',
                                         removePrefix: 'dist/',
                                         remoteDirectory: '/tmp',
-                                        execCommand: 'sudo /usr/bin/systemctl stop train-schedule && rm -rf /opt/train-schedule/* && unzip /tmp/trainSchedule.zip -d /opt/train-schedule && sudo /usr/bin/systemctl start train-schedule'
+                                        execCommand: 'sudo /usr/bin/systemctl stop httpd && rm -rf /var/www/html/* && unzip /tmp/gradletest.zip -d /var/www/html && sudo /usr/bin/systemctl start httpd'
                                     )
                                 ]
                             )
